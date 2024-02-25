@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link rel="shortcut icon" href="/img/Frame 7.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="title">TODO LIST</div>
+      <div class="container">
+        <div class="search">
+          <input
+            type="text"
+            id="myInput"
+            onkeyup="myFunction()"
+            class="search-note"
+            placeholder="Search note ...           "
+          />
+
+          <img class="vector-icon" alt="" src="/img/Vector.svg" />
+
+          <img class="vector-icon1" alt="" src="/img/Vector.png" />
+        </div>
+
+        <div class="dropdown">
+          <button onclick="myFunctional()" class="dropbtn">
+            ALL <img src="/img/chevron-top.svg" alt="" />
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <div class="filters">
+              <span class="active" id="all">All</span>
+              <span id="pending">Incomplete</span>
+              <span id="completed">Complete</span>
+            </div>
+          </div>
+        </div>
+        <div class="dark_light" onclick="toggleMode('dark_light')"></div>
+      </div>
+    </div>
+
+    <div id="todo-item">
+      <ol id="myUL" class="task-box"></ol>
+    </div>
+
+    <div class="disflex"></div>
+
+    <div class="bottom">
+      <button
+        id="hideButton"
+        onclick="document.getElementById('id01').style.display='block'"
+        class="add"
+      >
+        <img class="original-img" src="./assets/image/Add button.svg" alt="" />
+        <img class="hover-img" src="/img/Add button.png" alt="" />
+      </button>
+      <div id="id01" class="modal">
+        <form class="modal-content">
+          <div class="container">
+            <h1 id="modalTitle">NEW NOTE</h1>
+
+            <div class="task-input">
+              <input
+                class="input"
+                type="text"
+                name="todo-text"
+                id="newTaskInput"
+                placeholder="Input your note..."
+              />
+            </div>
+
+            <br /><br />
+            <br /><br />
+
+            <div class="clearfix">
+              <button
+                id="showButton"
+                class="delete_cancel"
+                onclick="closeModal()"
+                class="cancelbtn"
+              >
+                CANCEL
+              </button>
+              <button
+                id="addTaskBtn"
+                class="delete_cancel"
+                onclick="applyChanges(); closeModal();"
+                class="deletebtn"
+              >
+                APPLY
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
